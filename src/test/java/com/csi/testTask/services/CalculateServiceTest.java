@@ -58,9 +58,8 @@ public class CalculateServiceTest {
     assertEquals(expected, result);
   }
 
-  //extension of entry with same value
   @Test
-  public void calculateTest2() {
+  public void calculateExtensionOfEntryWithSameValueTest() {
     List<Price> newP = new ArrayList<Price>();
     newP.add(
         new Price(1L, "122856", 1, 1, new Date(2012, 1, 20, 0, 0, 0), new Date(2013, 1, 1, 0, 0, 0), 11000));
@@ -84,9 +83,8 @@ public class CalculateServiceTest {
     assertEquals(expected, result);
   }
 
-  //double adding
   @Test
-  public void calculateTest3() {
+  public void calculateWithDoubleAddingTest() {
     List<Price> newP = new ArrayList<Price>();
     newP.add(
         new Price(1L, "122856", 1, 1, new Date(2012, 1, 20, 0, 0, 0), new Date(2013, 1, 1, 0, 0, 0), 11000));
@@ -112,9 +110,8 @@ public class CalculateServiceTest {
     assertEquals(expected, result);
   }
 
-  //1 new overwrite all old
   @Test
-  public void calculateTest4() {
+  public void calculate1newOverwriteAllOldTest() {
     List<Price> newP = new ArrayList<Price>();
     newP.add(
         new Price(1L, "122856", 1, 1, new Date(2012, 1, 20, 0, 0, 0), new Date(2013, 1, 1, 0, 0, 0), 11000));
@@ -140,9 +137,8 @@ public class CalculateServiceTest {
     assertEquals(expected, result);
   }
 
-  //for 69 line coverage
   @Test
-  public void calculateTest5() {
+  public void calculateToCover69LineTest5() {
     List<Price> newP = new ArrayList<Price>();
     newP.add(
         new Price(1L, "122856", 1, 1, new Date(2012, 1, 20, 0, 0, 0), new Date(2013, 1, 5, 0, 0, 0), 1000));
@@ -169,7 +165,7 @@ public class CalculateServiceTest {
   }
 
   @Test(expected = RuntimeException.class)
-  public void wrongDataTest() {
+  public void wrongPeriodOfOldDataTest() {
     old.get(0).setBegin(new Date(2018, 1, 20));
     old.get(0).setEnd(new Date(2000, 11, 11));
     List<Price> newP = new ArrayList<Price>();
@@ -180,7 +176,7 @@ public class CalculateServiceTest {
   }
 
   @Test(expected = RuntimeException.class)
-  public void wrongDataTest2() {
+  public void wrongPeriodOfNewDataTest() {
     List<Price> newP = new ArrayList<Price>();
     newP.add(
         new Price(1L, "122856", 1, 1, new Date(2012, 1, 20, 0, 0, 0), new Date(2010, 1, 5, 0, 0, 0), 1000));
